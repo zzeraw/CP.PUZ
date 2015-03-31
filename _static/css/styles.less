@@ -11,11 +11,100 @@ div.container {
     width: @container-width;
 }
 
+.block {
+    margin-bottom: 50px;
+}
 
+.rouble-sign {
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+    vertical-align: baseline;
 
+    &:before {
+        content: '-';
+        font-size: 0.9em;
+        position: absolute;
+        top: 3%;
+    }
 
+    &:after {
+        content: '–';
+        left: 0;
+        position: absolute;
+        top: 11%;
+    }
+}
 
+.fw300{
+    font-weight: 300;
+}
 
+.fw400{
+    font-weight: 400;
+}
+
+.fw600{
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.header {
+    .main-menu {
+        padding: 10px 0;
+    }
+
+    .logo {
+        img {
+            width: 200px;
+        }
+    }
+
+    .social-menu {
+        margin-top: 15px;
+        text-align: center;
+
+        .icon {
+            margin: 0 20px;
+            width: 40px;
+        }
+    }
+
+    .phone {
+        font-size: 26px;
+        text-align: right;
+    }
+
+    .address {
+        text-align: right;
+    }
+}
+
+.navigation-menu {
+    .navigation {
+        .navbar {
+            border-radius: 0;
+            margin-bottom: 0;
+
+            .container {
+                .nav {
+                    width: 100%;
+
+                    li {
+                        width: 20%;
+
+                        a {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 .banners-block {
@@ -30,5 +119,261 @@ div.container {
 .about-block {
     .preview-foto {
         margin: 0 2px 2px 0;
+    }
+}
+
+
+.prices-block {
+    .col {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .tariff {
+        background-color: #fff;
+        border: 1px solid black;
+        margin-top: 15px;
+        padding: 30px;
+        height: 580px;
+
+        .tariff-label {
+            font-size: 10px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 100;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .prices {
+            margin-bottom: 20px;
+            .sum {
+                font-size: 24px;
+            }
+
+            .rouble-sign {
+                font-size: 24px;
+            }
+
+            .text {
+                font-size: 16px;
+                margin-left: 5px;
+            }
+        }
+
+        .properties {
+            height: 280px;
+            ul {
+                padding: 20px;
+
+                li {
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    .tariff-1 {
+        border-right: 0;
+    }
+
+    .tariff-2 {
+        margin-top: 0;
+        height: 610px;
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
+        box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
+
+        .properties {
+            height: 300px;
+        }
+    }
+
+    .tariff-3 {
+        border-left: 0;
+        -webkit-box-shadow: inset 7px 0px 15px -7px rgba(107,107,107,1);
+        -moz-box-shadow: inset 7px 0px 15px -7px rgba(107,107,107,1);
+        box-shadow: inset 7px 0px 15px -7px rgba(107,107,107,1);
+    }
+
+    .order {
+       .btn {
+            width: 100%;
+        }
+    }
+}
+
+
+.compare-block {
+    .container {
+        background-image: url('../img/scales.png');
+        background-position: 50% 0%;
+        background-repeat: no-repeat;
+    }
+
+    .col {
+        // padding: 30px;
+    }
+
+    .col-pluses {
+        .title {
+            color: green;
+        }
+    }
+
+    .col-minuses {
+        .title {
+            color: red;
+        }
+
+        ul {
+            padding-left: 105px;
+        }
+    }
+
+    .title {
+        font-size: 22px;
+        font-weight: 100;
+        margin-top: 5px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    .minus-sign {
+        color: red;
+        font-size: 20px;
+    }
+
+    .plus-sign {
+        color: green;
+        font-size: 20px;
+    }
+
+    ul {
+        padding-left: 80px;
+
+        li {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+    }
+
+}
+
+.events-block {
+    .event {
+        text-align: center;
+
+        .day {
+            font-size: 30px;
+        }
+
+        .month {
+            margin-bottom: 10px;
+        }
+
+        .coucher {
+            font-size: 12px;
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 12px;
+        }
+    }
+
+}
+
+.reviews-block {
+    .media {
+        .media-object {
+            margin-right: 20px;
+            width: 100px;
+        }
+
+        .media-heading {
+            font-size: 22px;
+            font-weight: 100;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .profession {
+            font-size: 12px;
+        }
+    }
+}
+
+.order-form {
+    background-color: #fff;
+    border: 3px solid #2e6da4;
+    border-radius: 4px;
+    padding: 10px 15px 20px 15px;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(102,102,102,1);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(102,102,102,1);
+    box-shadow: 0px 3px 3px 0px rgba(102,102,102,1);
+
+    label {
+        font-weight: 300;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        letter-spacing: 2.5px;
+        margin-top: 15px;
+        padding: 15px 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+}
+
+
+.throw-line {
+    line-height: 0.5;
+    text-align: center;
+
+    span {
+        display: inline-block;
+        position: relative;
+
+        &:before, &:after {
+            border-bottom: 1px solid #E0E0E0;
+            content: '';
+            height: 1px;
+            position: absolute;
+            top: 6px;
+            width: 300px;
+        }
+
+        &:before {
+            margin-right: 15px;
+            right: 100%;
+        }
+
+        &:after {
+            margin-left: 15px;
+            left: 100%;
+        }
+    }
+}
+
+h2.throw-line {
+    font-size: 30px;
+    font-weight: 100;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+
+    span:before, span:after {
+        top: 9px;
     }
 }

@@ -9,6 +9,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
 
+        <script src="js/modernizr.min.js"></script>
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -19,49 +21,53 @@
 
     <body>
 
-        <header>
+        <header class="header">
 
             <div class="main-menu">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-2">
+                        <div class="col-xs-3">
                             <div class="logo">
-                                <img src="http://placehold.it/137x50">
+                                <img class="" src="img/logo.png">
                             </div>
                         </div>
                         <div class="col-xs-6">
-                            <div class="navigation">
-                                <nav class="navbar navbar-default">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="#">Мероприятия</a></li>
-                                        <li><a href="#">Цены</a></li>
-                                        <li><a href="#">Аренда залов</a></li>
-                                        <li><a href="#">Отзывы</a></li>
-                                    </ul>
-                                </nav>
+                            <div class="social-menu">
+                                <a href="#"><img class="icon" src="img/font-awesome/png/vk.png" alt=""></a>
+                                <a href="#"><img class="icon" src="img/font-awesome/png/facebook26.png" alt=""></a>
+                                <a href="#"><img class="icon" src="img/font-awesome/png/instagram3.png" alt=""></a>
+                                <a href="#"><img class="icon" src="img/font-awesome/png/twitter16.png" alt=""></a>
                             </div>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-xs-3">
                             <div class="contacts">
-                                <div>8 (8352) 12-34-56</div>
-                                <div>ул. Ленинского Комсомола, 12 А</div>
+                                <div class="phone">8 (8352) 12-34-56</div>
+                                <div class="address">ул. Ленинского Комсомола, 12&nbsp;А</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sub-menu">
-                <div class="container">
-                    <div class="follow-buttons">
-
-                    </div>
+            <div class="navigation-menu">
+                <div class="navigation">
+                    <nav class="navbar navbar-default">
+                        <div class="container">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">О проекте</a></li>
+                                <li><a href="#">Цены</a></li>
+                                <li><a href="#">Мероприятия</a></li>
+                                <li><a href="#">Аренда залов</a></li>
+                                <li><a href="#">Отзывы</a></li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
 
         </header>
 
         <main>
-            <div class="banners-block">
+            <div class="banners-block block">
                 <div class="top-menu">
 
                 </div>
@@ -77,10 +83,7 @@
 
                         <div class="carousel-inner" role="listbox">
                             <div class="item active" style="background-image: url(http://placehold.it/2000x400&text=+)">
-                                <div class="container">
-                                    <h1>PUZZLE</h1>
-                                    <div>Коворкинг-центр</div>
-                                </div>
+
                             </div>
                         </div>
 
@@ -100,148 +103,353 @@
                 </div>
             </div>
 
-            <div class="about-block">
+            <div class="about-block block">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-8">
-                            <p>По космогонической гипотезе Джеймса Джинса, ионный хвост отражает керн. Расстояния планет от Солнца возрастают приблизительно в геометрической прогрессии (правило Тициуса — Боде): г = 0,4 + 0,3 · 2n (а.е.), где экватор оценивает вращательный восход . Керн оценивает центральный Тукан, но это не может быть причиной наблюдаемого эффекта. Декретное время последовательно вызывает межпланетный эффективный диаметp. Параллакс, сублимиpуя с повеpхности ядpа кометы, отражает спектральный класс. Тукан сложен.</p>
-                            <p>Когда речь идет о галактиках, маятник Фуко дает афелий . Как было показано выше, популяционный индекс меняет непреложный зенит. Радиант, как бы это ни казалось парадоксальным, представляет собой межпланетный узел. Прямое восхождение традиционно притягивает близкий секстант. Узел меняет близкий зенит. Как мы уже знаем, магнитное поле жизненно притягивает первоначальный годовой параллакс.</p>
+                            <p>Коворкинг-центр &laquo;Пазл&raquo;&nbsp;&mdash; это новое слово в&nbsp;рабочем процессе. Здесь люди из&nbsp;разных сфер деятельности арендуют рабочие места в&nbsp;одном пространстве. Чаще всего в&nbsp;коворкинге у&nbsp;каждого свои задачи: кому-то необходимо создать дизайн проект, кому-то провести деловую встречу в&nbsp;комфортной переговорной комнате, а&nbsp;для кого-то это место для написания дипломной работы.</p>
+
+                            <p>&laquo;Пазл&raquo;&nbsp;&mdash; дает вам полностью оборудованное рабочее место, бесплатный интернет, оргтехнику, чай, кофе, сладости.</p>
+                            <p>У&nbsp;нас ты&nbsp;можешь:</p>
+                            <ul>
+                                <li>комфортно работать;</li>
+                                <li>познакомиться с&nbsp;людьми творческих профессий;</li>
+                                <li>заявить о&nbsp;своем проекте и&nbsp;собрать команду;</li>
+                                <li>получить рекомендацию профи на&nbsp;открытых семинарах;</li>
+                                <li>приятно провести время за&nbsp;коллективной бизнес-игрой, видео-игрой, общением.</li>
+                            </ul>
+                            <p>Еще это идеальное пространство для проведения мероприятий разного масштаба: будь&nbsp;то семинар, презентация, конференция или деловая встреча. На&nbsp;300&nbsp;м расположено 50&nbsp;рабочих мест, переговорная комната, и&nbsp;образовательная зона для проведения лекций, семинаров, коучингов, мозговых штурмов.</p>
                         </div>
 
                         <div class="col-xs-4">
-                            <img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90"><img class="preview-foto" src="http://placehold.it/90x90">
+                            <img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99"><img class="preview-foto" src="http://placehold.it/99x99">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="prices-block">
+            <div class="prices-block block">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-4">
+                        <div class="col col-xs-4">
                             <div class="tariff tariff-1">
-                                <h3>Тариф "Свободный"</h3>
+                                <div class="tariff-label">
+                                    Тариф
+                                </div>
+                                <h3 class="title">Свободный</h3>
 
-                                <ul>
-                                    <li>200 р/день</li>
-                                    <li>1200 р/неделя</li>
-                                    <li>4000 р/месяц</li>
-                                </ul>
+                                <div>В&nbsp;вашем распоряжении:</div>
 
-                                <p>В вашем распоряжении:</p>
+                                <div class="properties">
+                                    <ul>
+                                        <li>Рабочее место</li>
+                                        <li>Интернет, wi-fi</li>
+                                        <li>Принтер, сканер, копир</li>
+                                        <li>Кофе, чай, вода</li>
+                                        <li>Личная ячейка для хранения</li>
+                                        <li>Зона отдыха, диваны, пуфики</li>
+                                        <li>Доски и&nbsp;флипчарты</li>
+                                    </ul>
+                                </div>
 
-                                <ul>
-                                    <li>Рабочее место</li>
-                                    <li>Интернет, wi-fi</li>
-                                    <li>Принтер, сканер, копир</li>
-                                    <li>Кофе, чай, вода</li>
-                                    <li>Личная ячейка для хранения</li>
-                                    <li>Зона отдыха, диваны, пуфики</li>
-                                    <li>Доски и флипчарты</li>
-                                </ul>
+                                <div class="prices">
+                                    <div>
+                                        <span class="sum">200</span> <span class="rouble-sign">Р</span> <span class="text">день</span>
+                                    </div>
+                                    <div>
+                                        <span class="sum">1 200</span> <span class="rouble-sign">Р</span> <span class="text">неделя</span>
+                                    </div>
+                                    <div>
+                                        <span class="sum">4 000</span> <span class="rouble-sign">Р</span> <span class="text">месяц</span>
+                                    </div>
+                                </div>
+
+                                <div class="order">
+                                    <button type="button" class="btn btn-primary">Оставить заявку</button>
+                                </div>
 
                             </div>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col col-xs-4">
                             <div class="tariff tariff-2">
-                                <h3>Тариф "Комфорт"</h3>
+                                <div class="tariff-label">
+                                    Тариф
+                                </div>
+                                <h3 class="title">Комфорт</h3>
 
-                                <ul>
-                                    <li>250 р/день</li>
-                                    <li>1600 р/неделя</li>
-                                    <li>5000 р/месяц</li>
-                                </ul>
+                                <div>В&nbsp;вашем распоряжении:</div>
 
-                                <p>В вашем распоряжении:</p>
+                                <div class="properties">
+                                    <ul>
+                                        <li>Рабочее место</li>
+                                        <li>Интернет, wi-fi</li>
+                                        <li>Принтер, сканер, копир</li>
+                                        <li>Кофе, чай, вода</li>
+                                        <li>Парковка</li>
+                                        <li>Личная ячейка для хранения</li>
+                                        <li>Зона отдыха, диваны, пуфики</li>
+                                        <li>Доски и&nbsp;флипчарты</li>
+                                        <li>Закрепленное рабочее место</li>
+                                    </ul>
+                                </div>
 
-                                <ul>
-                                    <li>Рабочее место</li>
-                                    <li>Интернет, wi-fi</li>
-                                    <li>Принтер, сканер, копир</li>
-                                    <li>Кофе, чай, вода</li>
-                                    <li>Парковка</li>
-                                    <li>Личная ячейка для хранения</li>
-                                    <li>Зона отдыха, диваны, пуфики</li>
-                                    <li>Доски и флипчарты</li>
-                                    <li>Закрепленное рабочее место</li>
-                                </ul>
+                                <div class="prices">
+                                    <div>
+                                        <span class="sum">250</span> <span class="rouble-sign">Р</span> <span class="text">день</span>
+                                    </div>
+                                    <div>
+                                        <span class="sum">1 600</span> <span class="rouble-sign">Р</span> <span class="text">неделя</span>
+                                    </div>
+                                    <div>
+                                        <span class="sum">5 000</span> <span class="rouble-sign">Р</span> <span class="text">месяц</span>
+                                    </div>
+                                </div>
+
+                                <div class="order">
+                                    <button type="button" class="btn btn-lg btn-primary">Оставить заявку</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col col-xs-4">
                             <div class="tariff tariff-3">
-                                <h3>Тариф "Бизнес"</h3>
+                                <div class="tariff-label">
+                                    Тариф
+                                </div>
+                                <h3 class="title">Бизнес</h3>
 
-                                <ul>
-                                    <li>250 р/день</li>
-                                    <li>1600 р/неделя</li>
-                                    <li>5000 р/месяц</li>
-                                </ul>
+                                <div>В&nbsp;вашем распоряжении:</div>
 
-                                <p>В вашем распоряжении:</p>
+                                <div class="properties">
+                                    <ul>
+                                        <li>Рабочее место в&nbsp;комфортном, тихом офисе</li>
+                                        <li>Интернет wi-fi</li>
+                                        <li>Принтер, сканер копир</li>
+                                        <li>Кофе, чай, вода</li>
+                                        <li>Парковка</li>
+                                        <li>Личная ячейка для хранения</li>
+                                        <li>Зона отдыха, диваны, пуфики</li>
+                                        <li>Доски и&nbsp;флипчарты</li>
+                                        <li>Закрепленное рабочее место</li>
+                                        <li>Бизнес библиотека</li>
+                                    </ul>
+                                </div>
 
-                                <ul>
-                                    <li>Рабочее место в комфортном, тихом офисе</li>
-                                    <li>Интернет wi-fi</li>
-                                    <li>Принтер, сканер копир</li>
-                                    <li>Кофе, чай, вода</li>
-                                    <li>Парковка</li>
-                                    <li>Личная ячейка для хранения</li>
-                                    <li>Зона отдыха, диваны, пуфики</li>
-                                    <li>Доски и флипчарты</li>
-                                    <li>Закрепленное рабочее место</li>
-                                    <li>Бизнес библиотека</li>
-                                </ul>
+                                <div class="prices">
+                                    <div>
+                                        <span class="sum">350</span> <span class="rouble-sign">Р</span> <span class="text">день</span>
+                                    </div>
+                                    <div>
+                                        <span class="sum">2 000</span> <span class="rouble-sign">Р</span> <span class="text">неделя</span>
+                                    </div>
+                                    <div>
+                                        <span class="sum">8 000</span> <span class="rouble-sign">Р</span> <span class="text">месяц</span>
+                                    </div>
+                                </div>
+
+                                <div class="order">
+                                    <button type="button" class="btn btn-primary">Оставить заявку</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="compare-block">
+            <div class="compare-block block">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <h3>Минусы арены офиса:</h3>
+                    <h2 class="throw-line"><span>Офис или коворкинг?</span></h2>
 
+                    <div class="row">
+                        <div class="col-xs-6 col col-minuses">
+                            <div class="text-center"><span class="minus-sign glyphicon glyphicon-minus-sign"></span></div>
+                            <h3 class="title text-center">Минусы аренды офиса</h3>
                             <ul>
                                 <li>Высокая арендная плата</li>
-                                <li>Вложения в ремонт, мебель</li>
-                                <li>Затраты на покупку оргтехники</li>
-                                <li>Плата за интернет</li>
-                                <li>Затраты на уборщицу</li>
+                                <li>Вложения в&nbsp;ремонт, мебель</li>
+                                <li>Затраты на&nbsp;покупку оргтехники</li>
+                                <li>Плата за&nbsp;интернет</li>
+                                <li>Затраты на&nbsp;уборщицу</li>
                             </ul>
                         </div>
-                        <div class="col-xs-6">
-                            <h3>Преимущество коворкинга перед арендой офиса:</h3>
-
+                        <div class="col-xs-6 col col-pluses">
+                            <div class="text-center"><span class="plus-sign glyphicon glyphicon-plus-sign"></span></div>
+                            <h3 class="title text-center">Преимущества коворкинга</h3>
                             <ul>
                                 <li>Удобное рабочее место</li>
-                                <li>Переговорная комната для встречи с клиентами или партнерами</li>
+                                <li>Переговорная комната для встречи с&nbsp;клиентами или партнерами</li>
                                 <li>Бесплатный wi-fi</li>
                                 <li>Бесплатная оргтехника</li>
-                                <li>Бесплатный чай,  кофе</li>
-                                <li>Комфортная зона отдыха ( диваны, пуфики, игры, книги)</li>
+                                <li>Бесплатный чай, кофе</li>
+                                <li>Комфортная зона отдыха (диваны, пуфики, игры, книги)</li>
                                 <li>Личный охраняемый ящик для хранения</li>
                                 <li>Регулярные обучающие семинары</li>
-                                <li>Возможность завязать полезные знакомства, найти партнера по бизнесу</li>
-                                <li>Нет ощущения что ты идешь на РА-БО-ТУ</li>
+                                <li>Возможность завязать полезные знакомства, найти партнера по&nbsp;бизнесу</li>
+                                <li>Нет ощущения что ты&nbsp;идешь на&nbsp;РА-БО-ТУ</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="events-block">
-
+            <div class="events-block block">
+                <div class="container">
+                    <h2 class="throw-line"><span>Наши мероприятия</span></h2>
+                    <div class="row">
+                        <div class="col-xs-2 event">
+                            <div class="day">12</div>
+                            <div class="month">апреля</div>
+                            <div class="coucher">Шаляпин Федор</div>
+                            <div>
+                                <div class="title">
+                                    Лекция по&nbsp;астрономии: &laquo;Почему параллельна природа гамма-всплексов?&raquo;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 event">
+                            <div class="day">13</div>
+                            <div class="month">апреля</div>
+                            <div class="coucher">Никулин Юрий</div>
+                            <div>
+                                <div class="title">
+                                    Лекция по&nbsp;геологии: &laquo;Юрский биотит: методология и&nbsp;особенности&raquo;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 event">
+                            <div class="day">14</div>
+                            <div class="month">апреля</div>
+                            <div class="coucher">Шульженко Клавдия</div>
+                            <div>
+                                <div class="title">
+                                    Лекция по&nbsp;гироскопии: &laquo;Прецизионный ротор: основные моменты&raquo;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 event">
+                            <div class="day">15</div>
+                            <div class="month">апреля</div>
+                            <div class="coucher">Бондарчук Сергей</div>
+                            <div>
+                                <div class="title">
+                                    Лекция по&nbsp;литературоведению: &laquo;Глубокий композиционный анализ в&nbsp;XXI&nbsp;веке&raquo;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 event">
+                            <div class="day">16</div>
+                            <div class="month">апреля</div>
+                            <div class="coucher">Михалков Сергей</div>
+                            <div>
+                                <div class="title">
+                                    Лекция по&nbsp;математике: &laquo;Равновероятный ряд Тейлора: предпосылки и&nbsp;развитие&raquo;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 event">
+                            <div class="day">17</div>
+                            <div class="month">апреля</div>
+                            <div class="coucher">Лещенко Лев</div>
+                            <div>
+                                <div class="title">
+                                    Лекция по&nbsp;почвоведению: &laquo;Почему когерентна гумусированность?&raquo;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="reviews-block">
+            <div class="rent-block block">
+                <div class="container">
+                    <h2 class="throw-line"><span>Аренда залов</span></h2>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <p>По своим философским взглядам Дезами был материалистом и атеистом, последователем Гельвеция, однако ощущение мира реально принимает во внимание примитивный дедуктивный метод, хотя в официозе принято обратное. По своим философским взглядам Дезами был материалистом и атеистом, последователем Гельвеция, однако ассоциация индуцирует гедонизм. Гипотеза творит гедонизм.</p>
 
+                            <p>Исчисление предикатов осмысленно выводит трагический структурализм. Боль раскладывает на элементы данный конфликт. Гений, как следует из вышесказанного, творит данный конфликт. Единственной космической субстанцией Гумбольдт считал материю, наделенную внутренней активностью, несмотря на это атомистика индуцирует бабувизм.</p>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="order-form">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputFio">Представьтесь</label>
+                                        <input type="text" class="form-control" id="inputFio" placeholder="Пожалуйста, представьтесь">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPhone">Телефон</label>
+                                        <input type="phone" class="form-control" id="inputPhone" placeholder="Введите номер телефона">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Введите Email">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Арендовать зал</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-block block">
+                <div class="container">
+                    <h2 class="throw-line"><span>Отзывы резидентов</span></h2>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="media">
+                                <div class="media-left media-top">
+                                    <img class="media-object img-circle" src="http://library.lipetsk.ru/lipmap/img/personalii/tolstoy1.jpg" alt="...">
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Лев Толстой</h3>
+                                    <p class="profession">Великий русский писатель XIX века</p>
+                                    <p>Я&nbsp;искал такое место в&nbsp;центре, где&nbsp;бы атмосфера соответствовала моему образу жизни и&nbsp;внутреннему пониманию комфорта, но&nbsp;и&nbsp;давала возможность сосредоточено поработать в&nbsp;удобной обстановке. Коворкинг &laquo;Puzzle&raquo; стал именно тем заведением , на&nbsp;котором я&nbsp;остановил свой выбор после посещения нескольких других мест.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="media">
+                                <div class="media-left media-top">
+                                    <img class="media-object img-circle" src="http://er3ed.qrz.ru/nekrasov/nekrasov2.jpg" alt="...">
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Николай Некрасов</h3>
+                                    <p class="profession">Русский поэт, писатель и&nbsp;публицист</p>
+                                    <p>Я&nbsp;выбрал Puzzle, потому что это обалденная возможность иметь свое представительство в&nbsp;центре Москвы за&nbsp;более чем умеренную стоимость.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="media">
+                                <div class="media-left media-top">
+                                    <img class="media-object img-circle" src="http://eternaltown.com.ua/images/stories/FOTO/D/1/dostoevskiy.jpg" alt="...">
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Федор Достоевский</h3>
+                                    <p class="profession">Один из&nbsp;лучших романистов мирового значения</p>
+                                    <p>Очень жалею, что когда мы&nbsp;с&nbsp;партнерами начинали свой маленький бизнес, не&nbsp;существовало коворкинга! Мы&nbsp;снимали офис и&nbsp;платили непосильную плату. Мы&nbsp;где-то встречались с&nbsp;партнерами и&nbsp;клиентами, где-то ели, где-то отмечали наши маленькие праздники.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="media">
+                                <div class="media-left media-top">
+                                    <img class="media-object img-circle" src="http://www.2do2go.ru/uploads/full/8618a0dd7300ad9859e1328d2e2af9da_w960_h2048.jpg" alt="...">
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Владимир Маяковский</h3>
+                                    <p class="profession">Советский поэт</p>
+                                    <p>Коворкинг Puzzle вообще решает.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </main>
-
-
 
         <footer>
             <div class="container">
