@@ -1,6 +1,7 @@
 @container-width: 1000px;
 
 @blue-color: #2e6da4;
+@blue-color2: #4E83EB;
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -13,8 +14,17 @@ div.container {
     width: @container-width;
 }
 
+.lr-border {
+    border-left: 1px solid black;
+    border-left: 1px solid black;
+}
+
 .block {
     margin-bottom: 50px;
+}
+
+h3 {
+    font-weight: 300;
 }
 
 .rouble-sign {
@@ -91,8 +101,8 @@ div.container {
             border-radius: 0;
             margin-bottom: 0;
 
-            background-color: @blue-color;
-            border-color: @blue-color;
+            background-color: @blue-color2;
+            border-color: @blue-color2;
 
             .container {
                 .nav {
@@ -105,6 +115,11 @@ div.container {
                             color: #fff;
                             text-align: center;
                             text-transform: uppercase;
+
+                            &:hover {
+                                color: yellow;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
@@ -124,7 +139,7 @@ div.container {
 
             -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
             -moz-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
-                box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
+            box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
         }
     }
 }
@@ -145,7 +160,7 @@ div.container {
 
     .tariff {
         background-color: #fff;
-        border: 1px solid black;
+        // border: 1px solid grey;
         margin-top: 15px;
         padding: 30px;
         height: 580px;
@@ -192,12 +207,14 @@ div.container {
     }
 
     .tariff-1 {
+        background-image: url(../img/lowpoly-11.jpg);
         border-right: 0;
     }
 
     .tariff-2 {
-        margin-top: 0;
+        background-image: url(../img/lowpoly-13.jpg);
         height: 610px;
+        margin-top: 0;
         -webkit-box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
         -moz-box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
         box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
@@ -208,6 +225,7 @@ div.container {
     }
 
     .tariff-3 {
+        background-image: url(../img/lowpoly-17.jpg);
         border-left: 0;
         -webkit-box-shadow: inset 7px 0px 15px -7px rgba(107,107,107,1);
         -moz-box-shadow: inset 7px 0px 15px -7px rgba(107,107,107,1);
@@ -224,7 +242,7 @@ div.container {
 
 .compare-block {
     .container {
-        background-image: url('../img/scales.png');
+        // background-image: url('../img/scales.png');
         background-position: 50% 0%;
         background-repeat: no-repeat;
     }
@@ -259,12 +277,14 @@ div.container {
 
     .minus-sign {
         color: red;
-        font-size: 20px;
+        // font-size: 20px;
+        width: 100px;
     }
 
     .plus-sign {
         color: green;
-        font-size: 20px;
+        // font-size: 20px;
+        width: 100px;
     }
 
     ul {
@@ -326,6 +346,7 @@ div.container {
 
 .order-form {
     background-color: #fff;
+    background-image: url(../img/lowpoly-04.jpg);
     border: 3px solid @blue-color;
     border-radius: 4px;
     padding: 10px 15px 20px 15px;
@@ -403,4 +424,29 @@ h2.throw-line {
     background-image: url(../img/shadow-top.png);
     background-position: 50% 0%;
     background-repeat: no-repeat;
+}
+
+
+.footer {
+    background-color: @blue-color2;
+    padding: 50px 0;
+
+    .social-menu {
+        margin-top: 15px;
+        text-align: center;
+
+        .icon {
+            margin: 0 20px;
+            width: 25px;
+        }
+    }
+
+    .phone {
+        font-size: 26px;
+        text-align: right;
+    }
+
+    .address {
+        text-align: right;
+    }
 }
