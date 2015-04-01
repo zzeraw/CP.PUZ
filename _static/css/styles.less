@@ -1,5 +1,7 @@
 @container-width: 1000px;
 
+@blue-color: #2e6da4;
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -69,7 +71,7 @@ div.container {
 
         .icon {
             margin: 0 20px;
-            width: 40px;
+            width: 25px;
         }
     }
 
@@ -89,6 +91,9 @@ div.container {
             border-radius: 0;
             margin-bottom: 0;
 
+            background-color: @blue-color;
+            border-color: @blue-color;
+
             .container {
                 .nav {
                     width: 100%;
@@ -97,7 +102,9 @@ div.container {
                         width: 20%;
 
                         a {
+                            color: #fff;
                             text-align: center;
+                            text-transform: uppercase;
                         }
                     }
                 }
@@ -108,9 +115,16 @@ div.container {
 
 
 .banners-block {
+
+
     .banners {
         .item {
-            height: 400px;
+            background-image: url(../img/banner.jpg);
+            height: 500px;
+
+            -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
+box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
         }
     }
 }
@@ -312,7 +326,7 @@ div.container {
 
 .order-form {
     background-color: #fff;
-    border: 3px solid #2e6da4;
+    border: 3px solid @blue-color;
     border-radius: 4px;
     padding: 10px 15px 20px 15px;
     -webkit-box-shadow: 0px 3px 3px 0px rgba(102,102,102,1);
@@ -376,4 +390,17 @@ h2.throw-line {
     span:before, span:after {
         top: 9px;
     }
+}
+
+
+.top-shadow {
+    background-image: url(../img/shadow-bottom.png);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+}
+
+.bottom-shadow {
+    background-image: url(../img/shadow-top.png);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
 }
