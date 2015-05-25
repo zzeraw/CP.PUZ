@@ -19,10 +19,9 @@
         <![endif]-->
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target="#mainNavbar">
 
         <header class="header">
-
             <div class="main-menu">
                 <div class="container">
                     <div class="row">
@@ -52,21 +51,20 @@
             </div>
             <div class="navigation-menu">
                 <div class="navigation">
-                    <nav class="navbar navbar-default">
+                    <nav class="navbar navbar-default" id="mainNavbar">
                         <div class="container">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">О нас</a></li>
-                                <li><a href="#">Тарифы</a></li>
-                                <li><a href="#">Мероприятия</a></li>
-                                <li><a href="#">Аренда пространства</a></li>
-                                <li><a href="#">Аренда переговорной</a></li>
-                                <li><a href="#">Отзывы</a></li>
+                                <li><a href="#about">О нас</a></li>
+                                <li><a href="#tarifs">Тарифы</a></li>
+                                <li><a href="#events">Мероприятия</a></li>
+                                <li><a href="#rent1">Аренда пространства</a></li>
+                                <li><a href="#rent2">Аренда переговорной</a></li>
+                                <li><a href="#reviews">Отзывы</a></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
             </div>
-
         </header>
 
         <main>
@@ -200,7 +198,7 @@
                 </div>
             </div>
 
-            <div class="about-block block">
+            <div class="about-block block" id="about">
                 <div class="container">
 
                     <h2 class="throw-line"><span>Что такое &laquo;Пазл&raquo;?</span></h2>
@@ -232,7 +230,7 @@
             </div>
 
 
-            <div class="free-day-block block">
+            <div class="free-day-block block" id="tarifs">
                 <div class="container">
                     <h2 class="throw-line"><span>Получи бесплатное занятие</span></h2>
 
@@ -432,7 +430,7 @@
                 </div>
             </div>
 
-            <div class="rent-for-events-block block">
+            <div class="rent-for-events-block block" id="rent1">
                 <div class="container">
                     <h2 class="throw-line"><span>Аренда пространства на мероприятия</span></h2>
 
@@ -479,7 +477,7 @@
                 </div>
             </div>
 
-            <div class="rent-room-block block">
+            <div class="rent-room-block block" id="rent2">
                 <div class="container">
                     <h2 class="throw-line"><span>Аренда переговорной комнаты</span></h2>
 
@@ -495,7 +493,7 @@
                 </div>
             </div>
 
-            <div class="events-block block">
+            <div class="events-block block" id="events">
                 <div class="container">
                     <h2 class="throw-line"><span>Наши мероприятия</span></h2>
                     <div class="row">
@@ -581,7 +579,7 @@
                 </div>
             </div>
 
-            <div class="reviews-block block">
+            <div class="reviews-block block" id="reviews">
                 <div class="container">
                     <h2 class="throw-line"><span>Отзывы резидентов</span></h2>
                     <div class="row">
