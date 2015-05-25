@@ -4,6 +4,11 @@
 @blue-color2: #4E83EB;
 @blue-color3: #005a93;
 
+
+html, body {
+    -webkit-font-smoothing:antialiased
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -71,27 +76,39 @@ h3 {
     }
 
     .logo {
+        margin-top: 10px;
         img {
             width: 250px;
         }
     }
 
     .social-menu {
-        margin-top: 15px;
-        text-align: center;
+        margin-top: 30px;
+        padding-left: 110px;
+        // text-align: center;
 
         .icon {
-            margin: 0 20px;
+            margin: 0 10px;
             width: 25px;
         }
     }
 
+    .phone-cta {
+        font-weight: bold;
+        text-align: right;
+    }
+
     .phone {
         font-size: 26px;
+        line-height: 1.2;
         text-align: right;
     }
 
     .address {
+        text-align: right;
+    }
+
+    .time {
         text-align: right;
     }
 }
@@ -110,18 +127,33 @@ h3 {
                     width: 100%;
 
                     li {
-                        width: 20%;
+                        width: 16%;
 
                         a {
                             color: #fff;
+                            font-size: 11px;
                             text-align: center;
                             text-transform: uppercase;
+                            padding-left: 0;
+                            padding-right: 0;
 
                             &:hover {
                                 color: yellow;
                                 cursor: pointer;
                             }
                         }
+
+                        // &:first-child {
+                        //     a {
+                        //         text-align: left;
+                        //     }
+                        // }
+
+                        // &:last-child {
+                        //     a {
+                        //         text-align: right;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -137,18 +169,81 @@ h3 {
         .item {
             background-image: url(../img/banner.jpg);
             height: 500px;
+            padding-top: 50px;
 
             -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
             -moz-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
             box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.75);
+
+            .container {
+                background-image: url(../img/op-black.png);
+                background-position: 50% 50%;
+                background-repeat: repeat;
+                padding-bottom: 30px;
+                padding-top: 30px;
+
+                .description {
+                    color: #fff;
+                    font-size: 20px;
+                    margin-top: 30px;
+                    padding: 40px 20px;
+                }
+
+                form {
+                    margin-top: 20px;
+                    color: #fff;
+                }
+            }
         }
     }
 }
 
+.icons-block {
+    .icons {
+        width: 100%;
+
+        td {
+            text-align: center;
+            vertical-align: top;
+            width: 100% / 7;
+        }
+
+        .text {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    }
+}
 
 .about-block {
     .preview-foto {
         margin: 0 2px 2px 0;
+    }
+}
+
+.numbers-block {
+    .numbers {
+        width: 100%;
+
+        td {
+            text-align: center;
+            width: 100% / 3;
+        }
+
+        .number {
+            border: 1px solid #000;
+            border-radius: 50%;
+            font-size: 30px;
+            height: 150px;
+            line-height: 150px;
+            margin: auto;
+            width: 150px;
+        }
+
+        .text {
+            font-size: 16px;
+            margin-top: 10px;
+        }
     }
 }
 
@@ -165,6 +260,32 @@ h3 {
         margin-top: 15px;
         padding: 30px;
         height: 580px;
+        // position: relative;
+
+        .ribbon {
+            background: #bada55;
+            color: #000;
+            margin-left: -40px;
+            margin-right: -40px;
+            padding: 10px 30px;
+            position: relative;
+
+            -webkit-box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
+        box-shadow: 0px 0px 15px 0px rgba(107,107,107,1);
+
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                border-width: 0 10px 10px 0;
+                border-style: solid;
+                border-color: transparent darken(#bada55, 25%);
+            }
+
+        }
 
         .tariff-label {
             font-size: 10px;
@@ -182,6 +303,12 @@ h3 {
             margin-bottom: 20px;
             .sum {
                 font-size: 24px;
+            }
+
+            .old {
+                color: #858585;
+                font-size: 20px;
+                text-decoration: line-through;
             }
 
             .rouble-sign {
@@ -210,6 +337,10 @@ h3 {
     .tariff-1 {
         background-image: url(../img/lowpoly-11.jpg);
         border-right: 0;
+
+        .properties {
+            height: 215px;
+        }
     }
 
     .tariff-2 {
@@ -299,12 +430,27 @@ h3 {
 
 }
 
+.rent-for-events-block {
+    ul {
+        li {
+            font-size: 18px;
+            line-height: 2;
+        }
+    }
+}
+
 .events-block {
     .event {
         text-align: center;
 
         .day {
             font-size: 30px;
+        }
+
+        .image {
+            .preview-foto {
+                border-radius: 50%;
+            }
         }
 
         .month {
@@ -443,6 +589,11 @@ h2.throw-line {
         }
     }
 
+    .phone-cta {
+        font-weight: bold;
+        text-align: right;
+    }
+
     .phone {
         font-size: 26px;
         text-align: right;
@@ -451,4 +602,9 @@ h2.throw-line {
     .address {
         text-align: right;
     }
+
+    .cta {
+        text-align: right;
+    }
 }
+
