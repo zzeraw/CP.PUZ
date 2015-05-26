@@ -51,8 +51,6 @@ class Review extends CActiveRecord
         return array(
             'ImageBehavior' => array(
                 'class' => 'ImageBehavior',
-                // 'image_path' => ,
-                // 'image_field' => ,
                 'original_resize' => true,
                 'original_resize_width' => $this->image_width,
                 'original_resize_height' => $this->image_height,
