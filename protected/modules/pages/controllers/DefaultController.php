@@ -12,12 +12,12 @@ class DefaultController extends BasePageController
     public function actionView($alias = '')
     {
         $page_model = Page::model();
-        $page = $page_model->active()->findByAlias($alias);
+        $this->page = $page_model->active()->findByAlias($alias);
 
         $this->setPageMeta($this->page);
         // $this->setPageTemplate($this->page);
 
-        if (!isset($page->id)) {
+        if (!isset($this->page->id)) {
             throw new CHttpException(404, 'Запрашиваемая страница не найдена.');
         }
 
@@ -28,6 +28,6 @@ class DefaultController extends BasePageController
         //     'title' => $this->page->title,
         // );
 
-        $this->render('view', array('model' => $page));
+        $this->render('view', array('model' => $this->page));
     }
 }

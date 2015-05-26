@@ -112,4 +112,15 @@ class FrontEndController extends BaseController
         }
     }
 
+    protected function getPage()
+    {
+        $module_name = Yii::app()->controller->module->id;
+
+        $page = Page::model()->active()->findByAttributes(array('module' => $module_name));
+
+        if (isset($page->id)) {
+            $this->page = $page;
+        }
+    }
+
 }
