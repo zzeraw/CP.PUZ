@@ -4,7 +4,7 @@ require_once(dirname(__FILE__) . '/params.php');
 
 return array(
 	'basePath'       => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name'           => 'CHRONOMETRY',
+    'name'           => 'Коворкинг ПАЗЛ',
     'sourceLanguage' => 'ru',
     'language'       => 'ru',
     'timeZone'       => 'Europe/Moscow',
@@ -103,10 +103,10 @@ return array(
 //                    'forms/ajax/<action:\d+>/*' => 'forms/ajax/<action>',
                 '<module:(forms)>/<controller:(ajax)>/<action:\w+>' => '<module>/<controller>/<action>',
 
-                // 'catalog' => 'catalog/default/index',
-                // 'catalog/group/<id:\d+>' => 'catalog/default/group',
-                // 'catalog/item/<id:\d+>/replace/<replace>' => 'catalog/default/view/',
-                // 'catalog/item/<id:\d+>' => 'catalog/default/view/',
+                'events' => 'events/default/index',
+                'events/<id:\d+>' => 'events/default/view',
+
+                'reviews' => 'reviews/default/index',
 
                 '<alias:[\w\-]+>/*' => array('pages/default/view/', 'alias'=>'<alias>'),
             ),
