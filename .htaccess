@@ -2,7 +2,7 @@
 
     Options +FollowSymLinks
     RewriteEngine on
-    RewriteCond $1 !^(index\.php|assets|js|css|img|fonts|favicon\.ico|sitemap\.xml)
+    RewriteCond $1 !^(index\.php|assets|js|css|img|fonts|uploads|favicon\.ico|sitemap\.xml)
 
     # Send request via index.php
     RewriteCond %{REQUEST_FILENAME} !-f
