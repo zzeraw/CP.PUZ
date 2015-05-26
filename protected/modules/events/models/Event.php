@@ -39,8 +39,24 @@ class Event extends CActiveRecord
             'order' => 'datetime'
         );
 
+        $scopes['asc'] = array(
+            'order' => 'datetime ASC'
+        );
+
+        $scopes['desc'] = array(
+            'order' => 'datetime DESC'
+        );
+
         $scopes['limit'] = array(
             'limit' => 6
+        );
+
+        $scopes['actual'] = array(
+            'condition' => 'datetime >= NOW()'
+        );
+
+        $scopes['closed'] = array(
+            'condition' => 'datetime < NOW()'
         );
 
         return $scopes;
