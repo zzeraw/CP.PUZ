@@ -75,24 +75,17 @@
                     <div class="form-group">
                         <?=$form->labelEx(
                             $form_model,
-                            'date'
+                            'comment'
                         );?>
-
-                        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                            'name' => 'date',
-                            'model' => $form_model,
-                            'attribute' => 'date',
-                            'language' => 'ru',
-                            'options' => array(
-                                'showAnim' => 'fold',
-                            ),
-                            'htmlOptions' => array(
+                        <?=$form->textArea(
+                            $form_model,
+                            'comment',
+                            array(
                                 'class' => 'form-control',
-                                'placeholder' => (isset($html_options['name']['placeholder'])) ? $html_options['name']['placeholder'] : '',
-                            ),
-                        ));?>
-
-                        <?=$form->error($form_model, 'date');?>
+                                'placeholder' => (isset($html_options['comment']['placeholder'])) ? $html_options['comment']['placeholder'] : '',
+                            )
+                        );?>
+                        <?=$form->error($form_model, 'comment');?>
                     </div>
 
                     <button type="submit" class="<?=$form_button_class?>" id=""><?=$form_button_text?></button>
