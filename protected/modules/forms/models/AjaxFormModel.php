@@ -89,7 +89,24 @@ class AjaxFormModel extends DynamicFormModel
 
         foreach ($fields as $name => $label) {
             if (isset($attributes[$name])) {
-                $message .= $label . ': ' . $attributes[$name] . '<br>';
+                if ($name == 'item') {
+                    $message .= '<br>';
+
+                    $json = json_decode($attributes[$name], true);
+
+                    if (is_array($json)) {
+                        $message .= $label . ': <br>';
+                        foreach ($json as $k => $v) {
+                            $message .= $k . ': ' . $v . '<br>';
+                        }
+                    } else {
+                        $message .= $label . ': ' . $attributes[$name] . '<br>';
+                    }
+
+                    $message .= '<br>';
+                } else {
+                    $message .= $label . ': ' . $attributes[$name] . '<br>';
+                }
             }
         }
 

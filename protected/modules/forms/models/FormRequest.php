@@ -121,10 +121,10 @@ class FormRequest extends BaseActiveRecord
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->fio, true);
+		$criteria->compare('name', $this->name, true);
 		$criteria->compare('phone', $this->phone, true);
 		$criteria->compare('subject', $this->subject, true);
-		$criteria->compare('utm', $this->system_info, true);
+		$criteria->compare('utm', $this->utm, true);
 		$criteria->compare('created_ip', $this->created_ip, true);
 		$criteria->compare('created_datetime', $this->created_datetime, true);
 

@@ -2,15 +2,6 @@
 
 class DefaultController extends FrontEndController
 {
-    public $layout = 'reviews.views.templates.default';
-
-    public function init()
-    {
-        parent::init();
-
-        $this->getPage();
-    }
-
     public function actionIndex()
     {
         $this->breadcrumbs[] = array(

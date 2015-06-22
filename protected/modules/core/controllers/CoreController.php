@@ -1,6 +1,6 @@
 <?php
 
-class CoreController extends BaseController
+class CoreController extends FrontEndController
 {
     public function actionError()
     {

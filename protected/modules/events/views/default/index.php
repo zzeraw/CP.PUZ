@@ -22,6 +22,7 @@
                 </div>
             </div>
         </div>
+        <br>
     <?php endforeach; ?>
 <?php else: ?>
     <p>К сожалению, актуальных мероприятий пока не ожидается</p>
@@ -48,6 +49,7 @@
                 </div>
             </div>
         </div>
+        <br>
 
     <?php endforeach; ?>
 <?php endif; ?>

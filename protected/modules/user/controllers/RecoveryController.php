@@ -1,8 +1,17 @@
 <?php
 
-class RecoveryController extends Controller
+class RecoveryController extends BaseController
 {
 	public $defaultAction = 'recovery';
+
+	public function accessRules()
+	{
+		return array(
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Recovery password

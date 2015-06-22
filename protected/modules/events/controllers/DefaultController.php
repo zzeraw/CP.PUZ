@@ -2,14 +2,7 @@
 
 class DefaultController extends FrontEndController
 {
-    public $layout = 'events.views.templates.default';
-
-    public function init()
-    {
-        parent::init();
-
-        $this->getPage();
-    }
+    // public $layout = 'events.views.templates.default';
 
     public function actionIndex()
     {

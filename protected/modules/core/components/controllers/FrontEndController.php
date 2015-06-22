@@ -3,13 +3,23 @@
 class FrontEndController extends BaseController
 {
     public $page;
-    public $pageIndex = 1;
+    public $blocks = array();
+
     public $meta_title;
+    public $pageIndex = 1;
     public $pageDescription;
     public $pageKeywords;
     public $pageTemplate;
 
     public $buffer = array();
+
+
+    public function init()
+    {
+        parent::init();
+
+        $this->getAllBlocks();
+    }
 
     /**
      * [behaviors description]
@@ -21,8 +31,6 @@ class FrontEndController extends BaseController
             'InlineCommonWidgetsBehavior' => array(
                 'class' => 'MInlineWidgetsBehavior',
                 'location' => $this->_generateWidgetsLocations(),
-                // 'startBlock' => '{{w:',
-                // 'endBlock' => '}}',
                 'widgets' => $this->_generateWidgetsList(),
             ),
         );
@@ -70,56 +78,33 @@ class FrontEndController extends BaseController
         return $list;
     }
 
-    protected function setPageMeta($page)
+    protected function getAllBlocks()
     {
-        $meta_title = '';
+        // $this->blocks = Yii::app()->cache->get('blocks');
 
-        $homepage = Page::model()->findByAlias('');
-        if (!isset($page->id)) {
-            $page = $homepage;
+        if (empty($this->blocks)) {
+            $blocks = Block::model()->findAll();
+            if (count($blocks)) foreach ($blocks as $block) {
+                $this->blocks[$block->alias] = $block->body;
+            }
+
+            // Кешируем блоки на 24 часа
+            // Yii::app()->cache->set('blocks', $this->blocks, 3600 * 24);
         }
 
-        if (empty($page->meta_title)) {
-            $meta_title = $homepage->meta_title;
-        } else {
-            $meta_title = $page->meta_title;
-        }
-
-        $meta_description = $homepage->meta_description;
-        $meta_keywords = $homepage->meta_keywords;
-
-        if (empty($meta_title)) {
-            $meta_title = Yii::app()->name;
-        }
-
-        $this->meta_title = $meta_title;
-
-        $meta_description = (!empty($meta_description)) ? $meta_description : $homepage->meta_description;
-        $meta_keywords = (!empty($meta_keywords)) ? $meta_keywords : $homepage->meta_keywords;
-
-        $this->setPageTitle($meta_title);
-
-        $this->pageDescription = $meta_description;
-        $this->pageKeywords = $meta_keywords;
-        $this->pageIndex = $homepage->meta_index;
+    }
+    protected function setPageMeta()
+    {
+        $this->setPageTitle($this->page->meta_title);
+        $this->pageDescription = $this->page->meta_description;
+        $this->pageKeywords = $this->page->meta_keywords;
+        $this->pageIndex = $this->page->meta_index;
     }
 
-
-    protected function setPageTemplate($page)
+    protected function setPageTemplate()
     {
-        if (!empty($page->template)) {
-            $this->layout = '//templates/' . $page->template;
-        }
-    }
-
-    protected function getPage()
-    {
-        $module_name = Yii::app()->controller->module->id;
-
-        $page = Page::model()->active()->findByAttributes(array('module' => $module_name));
-
-        if (isset($page->id)) {
-            $this->page = $page;
+        if (!empty($this->page->template)) {
+            $this->layout = '//templates/' . $this->page->template;
         }
     }
 

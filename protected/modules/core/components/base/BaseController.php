@@ -2,7 +2,8 @@
 
 class BaseController extends CController
 {
-    public $layout = 'core.views.templates.default';
+    // public $layout = 'core.views.templates.default';
+    public $layout = '//templates/default';
 
     public $breadcrumbs = array();
     public $menu = array();

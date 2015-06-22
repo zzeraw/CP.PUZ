@@ -1,21 +1,19 @@
 <?php
 
-$this->pageTitle = Yii::app()->name . ' - ' . 'Создать страницу';
+$this->pageTitle = Yii::app()->name . ' - ' . 'Добавить событие';
 
-$this->breadcrumbs = array(
-    'Страницы' => array('index'),
-	'Создать новую',
-);
+$this->breadcrumbs[] = array('route' => array('index'), 'title' => 'Страницы');
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Добавить событие');
 
 $this->menu = array(
     array(
-        'label' => 'Список страниц',
+        'label' => 'Список событий',
         'icon' => 'list',
         'url' => array('index')
     ),
 );
 ?>
 
-<h1>Создать страницу</h1>
+<h1>Добавить событие</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model' => $model)); ?>

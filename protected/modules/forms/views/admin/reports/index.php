@@ -4,11 +4,7 @@
 
 $this->pageTitle = Yii::app()->name . ' - ' . 'Список заявок';
 
-$this->breadcrumbs = array(
-    'Заявки' => array('index'),
-    'Список заявок',
-);
-
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Список заявок с сайта');
 
 ?>
 
@@ -22,18 +18,18 @@ $this->breadcrumbs = array(
     'columns' => array(
         'id',
         'created_datetime',
-        'fio',
+        'name',
         'phone',
         'email',
         array(
-            'name' => 'description',
+            'name' => 'custom',
             'type' => 'html',
-            'value' => '$data->parseJson($data->description)',
+            'value' => '$data->parseJson($data->custom)',
         ),
         array(
-            'name' => 'system_info',
+            'name' => 'utm',
             'type' => 'html',
-            'value' => '$data->parseJson($data->system_info)',
+            'value' => '$data->parseJson($data->utm)',
         ),
     ),
 )); ?>

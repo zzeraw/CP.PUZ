@@ -1,8 +1,9 @@
 <?php
 
-class LoginController extends Controller
+class LoginController extends BaseController
 {
 	public $defaultAction = 'login';
+    public $layout = '//templates/login';
 
 	public function accessRules()
     {

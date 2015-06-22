@@ -1,9 +1,17 @@
 <?php
 
-class ActivationController extends Controller
+class ActivationController extends BaseController
 {
 	public $defaultAction = 'activation';
 
+	public function accessRules()
+	{
+		return array(
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Activation user account

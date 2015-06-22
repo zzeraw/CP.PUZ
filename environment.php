@@ -3,9 +3,9 @@
 $environment = 'development';
 
 switch (dirname(__FILE__)) {
-    case '/Users/paveldanilov/Sites/sites.dev/puzzle':
-    case 'd:\OpenServer\domains\sites.dev\puzzle':
-    case 'D:\OpenServer\domains\sites.dev\puzzle':
+    case '/Users/paveldanilov/Sites/sites.dev/v2.puzzle':
+    case 'd:\OpenServer\domains\sites.dev\v2.puzzle':
+    case 'D:\OpenServer\domains\sites.dev\v2.puzzle':
         $protected = '/protected';
         break;
     default:
@@ -20,7 +20,11 @@ if ($environment == 'development') {
     $yii = dirname(__FILE__) . '/../../frameworks/Yii/1.1.16/yiilite.php';
 }
 
-
+if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+    define('YII_OS', 'WIN');
+} else {
+    define('YII_OS', PHP_OS);
+}
 
 if (($environment == 'development') || ($environment == 'test')) {
 //    define('YII_DEBUG', false);

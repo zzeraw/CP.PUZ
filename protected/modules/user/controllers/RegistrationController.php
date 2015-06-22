@@ -1,8 +1,19 @@
 <?php
 
-class RegistrationController extends Controller
+class RegistrationController extends BaseController
 {
+	public $layout = '//templates/registration';
+
 	public $defaultAction = 'registration';
+
+	public function accessRules()
+	{
+		return array(
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Declares class-based actions.

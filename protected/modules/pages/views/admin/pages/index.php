@@ -4,10 +4,7 @@
 
 $this->pageTitle = Yii::app()->name . ' - ' . 'Список страниц';
 
-$this->breadcrumbs = array(
-    'Страницы' => array('index'),
-    'Список страниц',
-);
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Страницы');
 
 $this->menu = array(
     array(
@@ -19,25 +16,25 @@ $this->menu = array(
 
 ?>
 
-<h1>Страницы сайта</h1>
+<h1>Страницы</h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'page-grid',
     'dataProvider' => $model->search(),
-    'itemsCssClass' => 'table table-striped',
+    'itemsCssClass' => 'table',
     'selectableRows' => 0,
     'rowCssClassExpression' => '($data->active == 1) ? "row-on" : "row-off"',
     'columns' => array(
-        // array(
-        //     'class' => 'DataColumn',
-        //     'evaluateHtmlOptions' => true,
-        //     'type' => 'html',
-        //     'htmlOptions' => array(
-        //         'class' => '($data->active == 1) ? "td-active" : "td-inactive"',
-        //         'title' => '($data->active == 1) ? "Выключить" : "Включить"',
-        //     ),
-        //     'value' => 'CHtml::link(($data->active == 1) ? "<span class=\'glyphicon glyphicon-off\'></span>" : "<span class=\'glyphicon glyphicon-play\'></span>", array(($data->active == 1) ? "turnOff" : "turnOn", "id" => $data->id))',
-        // ),
+        array(
+            'class' => 'DataColumn',
+            'evaluateHtmlOptions' => true,
+            'type' => 'html',
+            'htmlOptions' => array(
+                'class' => '($data->active == 1) ? "td-active" : "td-inactive"',
+                'title' => '($data->active == 1) ? "Выключить" : "Включить"',
+            ),
+            'value' => 'CHtml::link(($data->active == 1) ? "<span class=\'glyphicon glyphicon-off\'></span>" : "<span class=\'glyphicon glyphicon-play\'></span>", array(($data->active == 1) ? "turnOff" : "turnOn", "id" => $data->id))',
+        ),
         array(
             'name' => 'title',
             'htmlOptions' => array('class' => 'page-title'),

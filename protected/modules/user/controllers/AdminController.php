@@ -1,9 +1,9 @@
 <?php
 
-class AdminController extends Controller
+class AdminController extends BaseController
 {
 	public $defaultAction = 'admin';
-	public $layout='//layouts/column2';
+	public $layout='//templates/admin';
 
 	private $_model;
 

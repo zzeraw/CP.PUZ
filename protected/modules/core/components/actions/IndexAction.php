@@ -14,4 +14,4 @@ class IndexAction extends BaseAction
             'model' => $model,
         ));
     }
-} 
+}

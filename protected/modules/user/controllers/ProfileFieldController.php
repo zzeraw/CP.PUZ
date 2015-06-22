@@ -1,7 +1,8 @@
 <?php
 
-class ProfileFieldController extends Controller
+class ProfileFieldController extends BaseController
 {
+
 
 	/**
 	 * @var CActiveRecord the currently loaded data model instance.
@@ -29,14 +30,14 @@ class ProfileFieldController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('*'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','view','admin','delete'),
-				'users'=>UserModule::getAdmins(),
-			),
+			// array('allow',  // allow all users to perform 'index' and 'view' actions
+			// 	'actions'=>array('*'),
+			// 	'users'=>array('*'),
+			// ),
+			// array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			// 	'actions'=>array('create','update','view','admin','delete'),
+			// 	'users'=>UserModule::getAdmins(),
+			// ),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),

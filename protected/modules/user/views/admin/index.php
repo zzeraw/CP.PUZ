@@ -1,21 +1,23 @@
 <?php
-$this->breadcrumbs=array(
-	UserModule::t('Users')=>array('/user'),
-	UserModule::t('Manage'),
-);
+// $this->breadcrumbs=array(
+// 	UserModule::t('Users')=>array('/user'),
+// 	UserModule::t('Manage'),
+// );
+
+$this->breadcrumbs[] = array('route' => false, 'title' => UserModule::t('Users'));
 
 $this->menu=array(
     array('label'=>UserModule::t('Create User'), 'url'=>array('create')),
     array('label'=>UserModule::t('Manage Users'), 'url'=>array('admin')),
-    array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
-    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
+    // array('label'=>UserModule::t('Manage Profile Field'), 'url'=>array('profileField/admin')),
+    // array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
     $('.search-form').toggle();
     return false;
-});	
+});
 $('.search-form form').submit(function(){
     $.fn.yiiGridView.update('user-grid', {
         data: $(this).serialize()

@@ -37,4 +37,15 @@ class BaseWebModule extends CWebModule
         //     $this->id . '.components.widgets.views.*',
         // ));
     }
+
+    public function setPage()
+    {
+        $page = Page::model()->active()->findByAttributes(array('module' => $this->id));
+
+        if (isset($page->id)) {
+            return $page;
+        }
+
+        return false;
+    }
 }

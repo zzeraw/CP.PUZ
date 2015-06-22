@@ -4,4 +4,4 @@ Disallow: /assets/
 Disallow: /admin
 Disallow: /admin/
 
-Host: pocon.ru
+Host: bristol-msk.ru

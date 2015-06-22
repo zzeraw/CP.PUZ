@@ -36,12 +36,6 @@ $this->breadcrumbs = array(
 		<?php echo CHtml::activePasswordField($model,'password', array('class' => 'form-control')) ?>
 	</div>
 
-	<div class="form-group">
-		<p class="hint">
-		      <?php echo CHtml::link(UserModule::t("Register"),Yii::app()->getModule('user')->registrationUrl); ?> | <?php echo CHtml::link(UserModule::t("Lost Password?"),Yii::app()->getModule('user')->recoveryUrl); ?>
-		</p>
-	</div>
-
 	<div class="form-group rememberMe">
 		<?php echo CHtml::activeCheckBox($model,'rememberMe'); ?>
 		<?php echo CHtml::activeLabelEx($model,'rememberMe'); ?>

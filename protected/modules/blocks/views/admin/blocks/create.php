@@ -2,10 +2,8 @@
 
 $this->pageTitle = Yii::app()->name . ' - ' . 'Создать блок';
 
-$this->breadcrumbs = array(
-    'Блоки' => array('index'),
-    'Создать блок',
-);
+$this->breadcrumbs[] = array('route' => array('index'), 'title' => 'Блоки');
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Создать блок');
 
 $this->menu = array(
     array(

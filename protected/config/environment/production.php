@@ -5,12 +5,13 @@ return CMap::mergeArray(
     array(
         'components'=>array(
             'db' => array(
-                'connectionString' => 'mysql:host=localhost;dbname=######',
+                'connectionString' => 'mysql:host=localhost;dbname=###',
                 'emulatePrepare' => true,
-                'username' => '######',
-                'password' => '######',
+                'username' => '###',
+                'password' => '###',
                 'charset' => 'utf8',
                 'tablePrefix' => '',
+                'schemaCachingDuration' => 180,
             ),
             'log' => array(
                 'class'=>'CLogRouter',

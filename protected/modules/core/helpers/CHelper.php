@@ -17,14 +17,14 @@ class CHelper
         return !empty($date) ? Yii::app()->dateFormatter->format("dd MMMM yyyy", $date) . ' года' : false;
     }
 
-    public static function sqlDateTimeToRussianDateTime($datetime)
-    {
-        return !empty($datetime) ? Yii::app()->dateFormatter->format("dd MMMM yyyy", $datetime) . ' года в ' . Yii::app()->dateFormatter->format("HH:mm", $datetime) : false;
-    }
-
     public static function trimSeconds($time)
     {
         return !empty($time) ? Yii::app()->dateFormatter->format("HH:mm", $time) : false;
+    }
+
+    public static function sqlDateTimeToRussianDateTime($datetime)
+    {
+        return !empty($datetime) ? Yii::app()->dateFormatter->format("dd MMMM yyyy", $datetime) . ' года в ' . Yii::app()->dateFormatter->format("HH:mm", $datetime) : false;
     }
 
     public static function buildDatepicker($class, $model, $fieldname, $fieldvalue = false, $on_select = false)

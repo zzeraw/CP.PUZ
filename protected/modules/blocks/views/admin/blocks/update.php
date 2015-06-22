@@ -2,10 +2,8 @@
 
 $this->pageTitle = Yii::app()->name . ' - ' . 'Редактировать блок "' . $model->title . '"';
 
-$this->breadcrumbs = array(
-    'Блоки' => array('index'),
-    '"' . $model->title . '"' => array('update', 'id'=>$model->id),
-);
+$this->breadcrumbs[] = array('route' => array('index'), 'title' => 'Блоки');
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Редактировать блок: ' . $model->title);
 
 $this->menu = array(
     array(
@@ -27,6 +25,6 @@ $this->menu = array(
 
 ?>
 
-<h1>Редактировать блок "<?php echo $model->title; ?>"</h1>
+<h1>Редактировать блок: <?php echo $model->title; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

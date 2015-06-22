@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
-	'id' => 'page-form',
+	'id' => 'event-form',
 	'enableAjaxValidation' => false,
 	'clientOptions' => array(
     	'validateOnSubmit' => true,
@@ -19,86 +19,68 @@
 	</div>
 
 	<div class="form-group">
-		<?php echo $form->labelEx($model,'alias'); ?>
-		<?php echo $form->textField($model,'alias', array('class' => 'form-control input-large')); ?>
-		<?php echo $form->error($model,'alias'); ?>
+		<?php echo $form->labelEx($model,'author'); ?>
+		<?php echo $form->textField($model,'author', array('class' => 'form-control input-large')); ?>
+		<?php echo $form->error($model,'author'); ?>
 	</div>
 
 	<div class="form-group">
-		<?php echo $form->labelEx($model,'begin_body'); ?>
+        <?=$form->labelEx(
+            $model,
+            'datetime'
+        );?>
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            'name' => 'datetime',
+            'model' => $model,
+            'attribute' => 'datetime',
+            'language' => 'ru',
+            'options' => array(
+                'showAnim' => 'fold',
+            ),
+            'htmlOptions' => array(
+                'class' => 'form-control',
+            ),
+        ));?>
+        <?=$form->error($model, 'datetime');?>
+    </div>
+
+	<div class="form-group">
+		<?php echo $form->labelEx($model,'body'); ?>
 		<?php echo $form->textArea(
 			$model,
-			'begin_body',
+			'body',
 			array(
 				'rows' => 6,
 				'cols' => 50,
 				'class' => 'tinymce',
 			)
 		); ?>
-		<?php echo $form->error($model,'begin_body'); ?>
+		<?php echo $form->error($model,'body'); ?>
 	</div>
 
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'end_body'); ?>
-		<?php echo $form->textArea(
-			$model,
-			'end_body',
-			array(
-				'rows' => 6,
-				'cols' => 50,
-				'class' => 'tinymce',
-			)
-		); ?>
-		<?php echo $form->error($model,'end_body'); ?>
-	</div>
+	<?php if (!empty($model->image)) : ?>
+        <div class="form-group">
+            <img width=100 src="/uploads/catalog/<?=$model->image?>" alt="">
+        </div>
+    <?php endif; ?>
 
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'show_title'); ?>
-		<?php echo $form->dropDownList($model,'show_title',
-			array(0 => 'Нет', 1 => 'Да'),
-			array('class' => 'span2')
-		); ?>
-		<?php echo $form->error($model,'show_title'); ?>
-	</div>
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'image'); ?>
+        <?php echo $form->fileField($model,'image', array('class' => 'form-control input-large')); ?>
+        <?php echo $form->error($model,'image'); ?>
+    </div>
 
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'module'); ?>
-		<?php echo $form->textField($model,'module', array('class' => 'form-control input-medium')); ?>
-		<?php echo $form->error($model,'module'); ?>
-	</div>
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'image_attr_title'); ?>
+        <?php echo $form->textArea($model,'image_attr_title', array('class' => 'form-control input-large')); ?>
+        <?php echo $form->error($model,'image_attr_title'); ?>
+    </div>
 
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'template'); ?>
-		<?php echo $form->textField($model,'template', array('class' => 'form-control input-medium')); ?>
-		<?php echo $form->error($model,'template'); ?>
-	</div>
-
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'meta_index'); ?>
-		<?php echo $form->dropDownList($model,'meta_index',
-			array(0 => 'Нет', 1 => 'Да'),
-			array('class' => 'span2')
-		); ?>
-		<?php echo $form->error($model,'meta_index'); ?>
-	</div>
-
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'meta_title'); ?>
-		<?php echo $form->textField($model,'meta_title', array('class' => 'form-control input-large')); ?>
-		<?php echo $form->error($model,'meta_title'); ?>
-	</div>
-
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'meta_keywords'); ?>
-		<?php echo $form->textArea($model,'meta_keywords', array('class' => 'form-control input-large')); ?>
-		<?php echo $form->error($model,'meta_keywords'); ?>
-	</div>
-
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'meta_description'); ?>
-		<?php echo $form->textArea($model,'meta_description', array('class' => 'form-control input-large')); ?>
-		<?php echo $form->error($model,'meta_description'); ?>
-	</div>
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'image_attr_alt'); ?>
+        <?php echo $form->textArea($model,'image_attr_alt', array('class' => 'form-control input-large')); ?>
+        <?php echo $form->error($model,'image_attr_alt'); ?>
+    </div>
 
 	<div class="buttons">
 		<?php echo CHtml::submitButton('Сохранить', array('class' => 'btn btn-primary')); ?>

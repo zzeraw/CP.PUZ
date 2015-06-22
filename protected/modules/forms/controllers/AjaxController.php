@@ -44,6 +44,15 @@ class AjaxController extends FrontEndController
 
         if (isset($_POST['AjaxFormModel'])) {
 
+            $antispam = false;
+            if ( (isset($_POST['antispam'])) && ($_POST['antispam'] == 1) ) {
+                $antispam = true;
+            }
+
+            if ($antispam == false) {
+                return false;
+            }
+
             $fields = isset($_POST['fields']) ? json_decode($_POST['fields'], true) : array();
             $form_item = isset($_POST['form_item']) ? $_POST['form_item'] : array();
             $email_subject = isset($_POST['email_subject']) ? $_POST['email_subject'] : array();

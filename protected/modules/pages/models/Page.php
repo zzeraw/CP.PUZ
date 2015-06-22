@@ -36,8 +36,7 @@ class Page extends BaseActiveRecord
         return parent::model($className);
     }
 
-    public function behaviors()
-    {
+    public function behaviors(){
         return array(
             'BSystemInfoBehavior' => array(
                 'class' => 'BSystemInfoBehavior',
@@ -117,8 +116,7 @@ class Page extends BaseActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'modifiedUser' => array(self::BELONGS_TO, 'User', 'modified_user'),
-            'createdUser' => array(self::BELONGS_TO, 'User', 'created_user'),
+
 		);
 	}
 

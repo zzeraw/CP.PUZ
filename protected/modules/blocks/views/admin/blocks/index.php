@@ -2,10 +2,7 @@
 
 $this->pageTitle = Yii::app()->name . ' - ' . 'Список блоков';
 
-$this->breadcrumbs=array(
-    'Блоки' => array('index'),
-    'Список блоков',
-);
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Блоки');
 
 $this->menu = array(
     array(
@@ -25,7 +22,8 @@ $this->menu = array(
     'selectableRows' => 0,
     'enablePagination' => false,
     'summaryText' => false,
-    'itemsCssClass' => 'table table-striped',
+    'itemsCssClass' => 'table',
+    'rowCssClassExpression' => '($data->active == 1) ? "row-on" : "row-off"',
     'columns' => array(
         array(
             'class' => 'DataColumn',

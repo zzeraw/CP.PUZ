@@ -1,41 +1,39 @@
 <?php
 
-$this->pageTitle = Yii::app()->name . ' - ' . 'Редактировать страницу "' . $model->title . '"';
+$this->pageTitle = Yii::app()->name . ' - ' . 'Редактировать событие: ' . $model->title;
 
-$this->breadcrumbs = array(
-    'Страницы' => array('index'),
-    '"' . $model->title . '"' => array('update', 'id'=>$model->id),
-);
+$this->breadcrumbs[] = array('route' => array('index'), 'title' => 'Собтия');
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Редактировать событие: '. $model->title);
 
 $this->menu = array(
     array(
-        'label' => 'Список страниц',
+        'label' => 'Список событий',
         'icon' => 'list',
         'url' => array('index')
     ),
     array(
-        'label' => 'Создать страницу',
+        'label' => 'Создать событие',
         'icon' => 'plus',
         'url' => array('create')
     ),
     array(
-        'label' => ($model->active == 1) ? 'Выключить страницу' : 'Включить страницу',
+        'label' => ($model->active == 1) ? 'Выключить событие' : 'Включить событие',
         'icon' => ($model->active == 1) ? 'icon-off' : 'icon-ok',
         'url' => ($model->active == 1) ? array('turnOff', 'id' => $model->id) : array('turnOn', 'id' => $model->id)
     ),
 
     array(
-        'label' => 'Удалить страницу',
+        'label' => 'Удалить событие',
         'icon' => 'remove',
         'url' => array('delete', 'id' => $model->id),
         'htmlOptions' => array(
-            'confirm' => 'Вы действительно хотите удалить эту страницу (' . $model->title . ')?'
+            'confirm' => 'Вы действительно хотите удалить это событие (' . $model->title . ')?'
         ),
     ),
 );
 
 ?>
 
-<h1>Редактировать страницу "<?php echo $model->title; ?>"</h1>
+<h1>Редактировать событие: <?php echo $model->title; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model' => $model)); ?>

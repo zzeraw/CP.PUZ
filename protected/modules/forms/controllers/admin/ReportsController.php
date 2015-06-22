@@ -14,17 +14,4 @@ class ReportsController extends BackEndController
             ),
         );
     }
-
-    public function accessRules()
-    {
-        return array(
-            array('allow',
-                'actions' => array('index'),
-                'roles' => array(User::ROLE_GLOBAL_ADMIN, User::ROLE_GLOBAL_MANAGER),
-            ),
-            array('deny',
-                'users' => array('?'),
-            ),
-        );
-    }
 }

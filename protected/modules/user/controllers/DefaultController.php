@@ -1,7 +1,16 @@
 <?php
 
-class DefaultController extends Controller
+class DefaultController extends BaseController
 {
+
+	public function accessRules()
+	{
+		return array(
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Lists all models.

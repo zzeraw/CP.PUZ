@@ -10,7 +10,7 @@
             <div class="media">
                 <div class="media-left">
                     <?php if (!empty($model->image)) : ?>
-                        <img class="media-object img-circle preview-foto" src="<?=$model->getImageUrl()?>">
+                        <img class="media-object img-circle preview-foto" src="<?=$model->getImageUrl()?>" width=100>
                     <?php else: ?>
                         <img class="media-object img-circle preview-foto" src="http://placehold.it/100x100&text=PUZZLE?>">
                     <?php endif; ?>

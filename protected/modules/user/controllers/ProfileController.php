@@ -1,9 +1,18 @@
 <?php
 
-class ProfileController extends Controller
+class ProfileController extends BaseController
 {
 	public $defaultAction = 'profile';
 	public $layout='//layouts/column2';
+
+	public function accessRules()
+	{
+		return array(
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * @var CActiveRecord the currently loaded data model instance.
@@ -14,10 +23,10 @@ class ProfileController extends Controller
 	 */
 	public function actionProfile()
 	{
-		var_dump(Yii::app()->user);
-		var_dump(Yii::app()->user->isGuest);
-		var_dump(Yii::app()->user->id);
-		var_dump(Yii::app()->user->username);
+		// var_dump(Yii::app()->user);
+		// var_dump(Yii::app()->user->isGuest);
+		// var_dump(Yii::app()->user->id);
+		// var_dump(Yii::app()->user->username);
 
 		$model = $this->loadUser();
 	    $this->render('profile',array(

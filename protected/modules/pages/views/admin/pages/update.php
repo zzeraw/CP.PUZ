@@ -1,11 +1,9 @@
 <?php
 
-$this->pageTitle = Yii::app()->name . ' - ' . 'Редактировать страницу "' . $model->title . '"';
+$this->pageTitle = Yii::app()->name . ' - ' . 'Редактировать страницу: ' . $model->title;
 
-$this->breadcrumbs = array(
-    'Страницы' => array('index'),
-    '"' . $model->title . '"' => array('update', 'id'=>$model->id),
-);
+$this->breadcrumbs[] = array('route' => array('index'), 'title' => 'Страницы');
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Редактировать страницу: '. $model->title);
 
 $this->menu = array(
     array(
@@ -36,6 +34,6 @@ $this->menu = array(
 
 ?>
 
-<h1>Редактировать страницу "<?php echo $model->title; ?>"</h1>
+<h1>Редактировать страницу: <?php echo $model->title; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model' => $model)); ?>

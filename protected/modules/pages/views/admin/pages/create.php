@@ -2,10 +2,8 @@
 
 $this->pageTitle = Yii::app()->name . ' - ' . 'Создать страницу';
 
-$this->breadcrumbs = array(
-    'Страницы' => array('index'),
-	'Создать новую',
-);
+$this->breadcrumbs[] = array('route' => array('index'), 'title' => 'Страницы');
+$this->breadcrumbs[] = array('route' => false, 'title' => 'Создать страницу');
 
 $this->menu = array(
     array(

@@ -1,21 +1,21 @@
 <?php
 
-require_once(dirname(__FILE__) . '/params.php');
+require_once(dirname(__FILE__) . '/_about.php');
+require_once(dirname(__FILE__) . '/_routes.php');
+require_once(dirname(__FILE__) . '/_params.php');
 
 return array(
-	'basePath'       => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name'           => 'Коворкинг ПАЗЛ',
-    'sourceLanguage' => 'ru',
-    'language'       => 'ru',
-    'timeZone'       => 'Europe/Moscow',
 
-    'defaultController' => 'pages/default/view/',
+	'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
+    'name' => $_about['project'],
+    'sourceLanguage' => 'ru',
+    'language' => 'ru',
+    'timeZone' => 'Europe/Moscow',
 
     // preloading 'log' component
     'preload' => array('log'),
 
     'import' => array(
-
         'application.modules.core.behaviors.*',
         'application.modules.core.components.base.*',
         'application.modules.core.components.controllers.*',
@@ -26,14 +26,16 @@ return array(
 
 	// используемые приложением поведения
 	'behaviors' => array(
-
-	),
+        'runEnd' => array(
+            'class' => 'application.modules.core.behaviors.WebApplicationEndBehavior',
+        ),
+    ),
 
 	// application components
 	'components' => array(
-		'errorHandler' => array(
-			'errorAction' => 'core/core/error',
-		),
+		// 'errorHandler' => array(
+		// 	'errorAction' => 'core/core/error',
+		// ),
         'log' => array(
             'class'=>'CLogRouter',
             'routes' => array(
@@ -43,83 +45,17 @@ return array(
                 ),
             ),
         ),
-
-        // пользователь
-        'user' => array(
-            'class' => 'application.modules.user.components.WebUser',
-            // enable cookie-based authentication
-            'allowAutoLogin' => true,
-            'loginUrl' => array('/user/login'),
-        ),
-
-        'clientScript' => array(
-            'coreScriptPosition' => CClientScript::POS_BEGIN,
-            'packages' => array(
-                'jquery' => array(
-                    'baseUrl' => 'js/',
-                    'js' => array(
-                        YII_DEBUG ? 'jquery-1.11.1.js' : 'jquery-1.11.1.min.js'
-                    ),
-                ),
-                // 'bootstrap3' => array(
-                //     'baseUrl' => '',
-                //     'js' => array(
-                //         YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'
-                //     ),
-                //     'css' => array(
-                //         'css/bootstrap.min.css',
-                //         'css/bootstrap-theme.min.css',
-                //     ),
-                //     'depends' =>array('jquery'),
-                // ),
-                // 'modernizr' => array(
-                //     'baseUrl' => '',
-                //     'js' => array(
-                //         'js/modernizr-2.6.2-respond-1.1.0.min.js'
-                //     ),
-                // ),
-                // 'my-js' => array(
-                //     'baseUrl' => 'js/',
-                //     'js' => array(
-                //         YII_DEBUG ? 'main.js' : 'main.min.js'
-                //     ),
-                //     'depends' =>array('jquery'),
-                // ),
-                // 'my-css' => array(
-                //     'baseUrl' => 'css/',
-                //     'css' => array('styles.css?css=1'),
-                // ),
-            ),
-        ),
-
-        'urlManager' => array(
-            'urlFormat' => 'path',
-            'showScriptName' => false,
-            'urlSuffix' => '/',
-            'rules' => array(
-                // array('sitemap/default/xml', 'pattern'=>'sitemap.xml', 'urlSuffix'=>''),
-                // array('sitemap/default/index', 'pattern'=>'sitemap', 'urlSuffix'=>'/'),
-
-//                    'forms/ajax/<action:\d+>/*' => 'forms/ajax/<action>',
-                '<module:(forms)>/<controller:(ajax)>/<action:\w+>' => '<module>/<controller>/<action>',
-
-                'events' => 'events/default/index',
-                'events/<id:\d+>' => 'events/default/view',
-
-                'reviews' => 'reviews/default/index',
-
-                '<alias:[\w\-]+>/*' => array('pages/default/view/', 'alias'=>'<alias>'),
-            ),
-        ),
 	),
 
     'modules' => array(
         'core',
+        'admin',
+        'events',
         'pages',
+        'reviews',
         'blocks',
         'forms',
-        'events',
-        'reviews',
+        'sitemap',
         'user' => array(
             # encrypting method (php hash function)
             'hash' => 'sha1',
@@ -137,7 +73,7 @@ return array(
             'autoLogin' => true,
 
             # registration path
-            'registrationUrl' => array('/user/registration'),
+            // 'registrationUrl' => array('/user/registration'),
 
             # recovery password path
             'recoveryUrl' => array('/user/recovery'),
@@ -146,14 +82,14 @@ return array(
             'loginUrl' => array('/user/login'),
 
             # page after login
-            'returnUrl' => array('/user/profile'),
+            'returnUrl' => array('/admin/'),
 
             # page after logout
             'returnLogoutUrl' => array('/user/login'),
         ),
     ),
 
-	'params' => $params,
+	'params' => $_params,
 
 
 );
