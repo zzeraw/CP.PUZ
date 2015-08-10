@@ -3,9 +3,9 @@
 $environment = 'development';
 
 switch (dirname(__FILE__)) {
-    case '/Users/paveldanilov/Sites/sites.dev/v2.puzzle':
-    case 'd:\OpenServer\domains\sites.dev\v2.puzzle':
-    case 'D:\OpenServer\domains\sites.dev\v2.puzzle':
+    case '/Users/paveldanilov/Sites/sites.dev/puzzle':
+    case 'd:\OpenServer\domains\sites.dev\puzzle':
+    case 'D:\OpenServer\domains\sites.dev\puzzle':
         $protected = '/protected';
         break;
     default:
